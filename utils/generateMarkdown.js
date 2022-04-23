@@ -17,4 +17,10 @@ function generateMarkdown(data) {
 `;
 }
 
-module.exports = generateMarkdown;
+module.exports = templateData => {
+  const { title, description, installation, usage, license, ...confirmArray } = templateData;
+  return `# ${title}
+  ## Description 
+  ${description}
+`
+};
