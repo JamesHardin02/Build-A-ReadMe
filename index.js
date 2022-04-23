@@ -88,7 +88,7 @@ const promptUser = () => {
     },
     {
       type: 'input',
-      name: 'features',
+      name: 'constribute',
       message: 'Provide instructions on how to contribute',
       when: ({ confirmContribute }) => confirmContribute
     },

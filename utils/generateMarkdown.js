@@ -32,16 +32,65 @@ function renderLicenseSection(license) {
   
 }
 
-module.exports = templateData => {
-  const { title, description, installation, usage, license, ...confirmArray } = templateData;
-  return `# ${title}
-${renderLicenseBadge(license)}
-
-## Table Of Content
+function renderTableOfContents(confirmFeatures, confirmContribute){
+  if(confirmFeatures && confirmContribute){
+    return `## Table Of Content
 - [Project description](#Description)
 - [Usage](#Usage)
 - [Installation](#Installation)
-- [License](#License)
+- [Features](#Features)
+- [Contribute](#Contribute)
+- [License](#License)`
+  } else if(confirmFeatures && !confirmContribute){
+    return `## Table Of Content
+- [Project description](#Description)
+- [Usage](#Usage)
+- [Installation](#Installation)
+- [Features](#Features)
+- [License](#License)`
+  } else if (!confirmFeatures && confirmContribute){
+    return `## Table Of Content
+- [Project description](#Description)
+- [Usage](#Usage)
+- [Installation](#Installation)
+- [Contribute](#Contribute)
+- [License](#License)`
+  } else {
+    return `## Table Of Content
+- [Project description](#Description)
+- [Usage](#Usage)
+- [Installation](#Installation)
+- [License](#License)`
+  }
+}
+
+function renderFeaturesSection(confirmArr){
+  const { confirmFeatures, features} = confirmArr;
+  if(confirmFeatures){
+    return `## Features
+${features}
+`
+  }
+  return``
+}
+
+function renderContributeSection(confirmArr){
+  const { confirmContribute, contribute } = confirmArr;
+  if(confirmContribute){
+    console.log(contribute)
+    return `## contribute
+${contribute}
+`
+  }
+  return``
+}
+
+module.exports = templateData => {
+  const { title, description, installation, usage, license, ...confirmArr } = templateData;
+  return `# ${title}
+${renderLicenseBadge(license)}
+
+${renderTableOfContents(confirmFeatures, confirmContribute)}
 
 ## Description 
 ${description}
@@ -51,6 +100,10 @@ ${usage}
 
 ## Installation
 ${installation}
+
+${renderFeaturesSection(confirmArr)}
+
+${renderContributeSection(confirmArr)}
 
 ## license
 ${renderLicenseSection(license)}
