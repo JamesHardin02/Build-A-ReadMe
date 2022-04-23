@@ -20,7 +20,23 @@ function generateMarkdown(data) {
 module.exports = templateData => {
   const { title, description, installation, usage, license, ...confirmArray } = templateData;
   return `# ${title}
-  ## Description 
-  ${description}
+
+## Table Of Content
+-[Project description](#Description)
+-[Usage](#Usage)
+-[Installation](#Installation)
+-[License](#License)
+
+## Description 
+${description}
+
+## Usage
+${usage}
+
+## Installation
+${installation}
+
+## license
+${license}
 `
 };

@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
-const { writeFile } = require('./utils/fsModule');
+const { writeToFile } = require('./utils/fsModule');
 // TODO: Create an array of questions for user input
 const promptUser = () => {
   return inquirer.prompt([
@@ -96,7 +96,6 @@ const promptUser = () => {
     },
   ])
 }
-const questions = [];
 const mockData = {
   title: 'Build-A-ReadMe',
   description: 'Build a readme.md using the command line',
@@ -107,8 +106,6 @@ const mockData = {
   features: 'submit a pull request and the Build-A-Read me team will review the submission',        
   confirmContribute: true
 };
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
 promptUser()
@@ -116,11 +113,11 @@ promptUser()
     return generateMarkdown(answers);
   })
   .then(markdown => {
-    return writeFile(markdown);
+    return writeToFile(markdown);
   })
   .then(writeFileResponse => {
     console.log(writeFileResponse);
+  })
+  .catch(err =>{
+    console.log(err);
   });
-
-
-// Function call to initialize app

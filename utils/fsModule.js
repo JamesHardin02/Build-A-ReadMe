@@ -1,9 +1,8 @@
-const { rejects } = require('assert');
 const fs = require('fs');
 
-const writeFile = fileContent => {
+const writeToFile = fileContent => {
   return new Promise((resolve, reject) => {
-    fs.writeFile('../README.md', fileContent, err => {
+    fs.writeFile('README.md', fileContent, err => {
       if (err) {
         // if there's an error, reject the Promise and send the error to the Promise's `.catch()` method
         reject(err)
@@ -19,4 +18,4 @@ const writeFile = fileContent => {
   });
 };
 
-module.exports = {writeFile}
+module.exports = {writeToFile}
