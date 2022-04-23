@@ -58,17 +58,11 @@ const promptUser = () => {
       }
     },
     {
-      type: 'input',
+      type: 'list',
       name: 'license',
-      message: 'Provide a license for the project (Required)',
-      validate: installationInput => {
-        if (installationInput) {
-          return true;
-        } else {
-          console.log('You need to enter a license for your project!');
-          return false;
-        }
-      }
+      message: 'What license are you using for this project?',
+      choices: ['MIT', 
+      'Apache license 2.0', 'artistic-2.0', 'ES6', 'jQuery', 'Bootstrap', 'Node']
     },
     {
       type: 'confirm',
