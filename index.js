@@ -61,9 +61,12 @@ const promptUser = () => {
       type: 'list',
       name: 'license',
       message: 'What license are you using for this project?',
-      choices: ['MIT', 
+      choices: [
+      'MIT', 
       'ISC',
-      'Apache 2.0 License']
+      'Apache 2.0 License',
+      'No license'
+      ]
     },
     {
       type: 'confirm',
