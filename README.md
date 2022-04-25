@@ -6,10 +6,13 @@
 - [Usage](#Usage)
 - [Testing](#Testing)
 - [Installation](#Installation)
+- [Features](#Features)
+- [Contribute](#Contribute)
+- [Questions](#Questions)
 - [License](#License)
 
 ## Description 
-desac
+desc
 
 ## Usage
 usage
@@ -18,14 +21,18 @@ usage
 test
 
 ## Installation
-instakl
+install
 
- 
+## Features
+feeatures 
 
-
+## contribute
+contribute
 
 ## Questions
-quest
+reach out at either and ill answer
+- GitHub Username: [JamesHardin02](https://github.com/JamesHardin02)
+- Email Address: jwhusc7@gmail.com
 
 ## license
 This project is licensed under the [MIT](https://opensource.org/licenses/MIT) license

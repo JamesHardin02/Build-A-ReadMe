@@ -42,6 +42,7 @@ function renderTableOfContents(confirmArr){
 - [Installation](#Installation)
 - [Features](#Features)
 - [Contribute](#Contribute)
+- [Questions](#Questions)
 - [License](#License)`
   } else if(confirmFeatures && !confirmContribute){
     return `## Table Of Content
@@ -50,6 +51,7 @@ function renderTableOfContents(confirmArr){
 - [Testing](#Testing)
 - [Installation](#Installation)
 - [Features](#Features)
+- [Questions](#Questions)
 - [License](#License)`
   } else if (!confirmFeatures && confirmContribute){
     return `## Table Of Content
@@ -58,6 +60,7 @@ function renderTableOfContents(confirmArr){
 - [Testing](#Testing)
 - [Installation](#Installation)
 - [Contribute](#Contribute)
+- [Questions](#Questions)
 - [License](#License)`
   } else {
     return `## Table Of Content
@@ -65,6 +68,7 @@ function renderTableOfContents(confirmArr){
 - [Usage](#Usage)
 - [Testing](#Testing)
 - [Installation](#Installation)
+- [Questions](#Questions)
 - [License](#License)`
   }
 }
@@ -88,7 +92,7 @@ ${contribute}`
 }
 
 module.exports = templateData => {
-  const { title, description, usage, testing, installation, questions, license, ...confirmArr } = templateData;
+  const { title, description, usage, testing, installation, github, email, questionInstructions, license, ...confirmArr } = templateData;
   return `# ${title}
 ${renderLicenseBadge(license)}
 
@@ -111,7 +115,9 @@ ${renderFeaturesSection(confirmArr)}
 ${renderContributeSection(confirmArr)}
 
 ## Questions
-${questions}
+${questionInstructions}
+- GitHub Username: [${github}](https://github.com/${github})
+- Email Address: ${email}
 
 ## license
 ${renderLicenseSection(license)}

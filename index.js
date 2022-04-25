@@ -72,13 +72,39 @@ const promptUser = () => {
     },
     {
       type: 'input',
-      name: 'questions',
-      message: 'Provide contact information to recieve questions about the project (Required)',
-      validate: questionsInput => {
-        if (questionsInput) {
+      name: 'github',
+      message: 'Provide your GitHub username to recieve questions about the project (Required)',
+      validate: githubInput => {
+        if (githubInput) {
           return true;
         } else {
-          console.log('You need to provide contact information!');
+          console.log('You need to provide your GitHub username!');
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name: 'email',
+      message: 'Provide your email address to recieve questions about the project (Required)',
+      validate: emailInput => {
+        if (emailInput) {
+          return true;
+        } else {
+          console.log('You need to provide your email address!');
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name: 'questionInstructions',
+      message: 'Provide instructions on how to reach out to you with questions (Required)',
+      validate: questionInstructionsInput => {
+        if (questionInstructionsInput) {
+          return true;
+        } else {
+          console.log('You need to provide instructions on how to reach out to you with questions!');
           return false;
         }
       }
