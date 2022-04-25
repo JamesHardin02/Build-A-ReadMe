@@ -33,6 +33,32 @@ const promptUser = () => {
     },
     {
       type: 'input',
+      name: 'usage',
+      message: 'Provide usage instructions for the project (Required)',
+      validate: installationInput => {
+        if (installationInput) {
+          return true;
+        } else {
+          console.log('You need to enter instructions on how to use the project!');
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name: 'testing',
+      message: 'Provide information about testing the project (Required)',
+      validate: testingInput => {
+        if (testingInput) {
+          return true;
+        } else {
+          console.log('You need to provide testing information!');
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
       name: 'installation',
       message: 'Provide steps required to install the project (Required)',
       validate: installationInput => {
@@ -46,13 +72,13 @@ const promptUser = () => {
     },
     {
       type: 'input',
-      name: 'usage',
-      message: 'Provide instructions on how to use the project (Required)',
-      validate: installationInput => {
-        if (installationInput) {
+      name: 'questions',
+      message: 'Provide contact information to recieve questions about the project (Required)',
+      validate: questionsInput => {
+        if (questionsInput) {
           return true;
         } else {
-          console.log('You need to enter instructions on how to use the project!');
+          console.log('You need to provide contact information!');
           return false;
         }
       }
@@ -71,7 +97,7 @@ const promptUser = () => {
     {
       type: 'confirm',
       name: 'confirmFeatures',
-      message: 'Would you like to features of your project?',
+      message: 'Would you like to highlight features of your project?',
       default: false
     },
     {
@@ -88,22 +114,12 @@ const promptUser = () => {
     },
     {
       type: 'input',
-      name: 'constribute',
+      name: 'contribute',
       message: 'Provide instructions on how to contribute',
       when: ({ confirmContribute }) => confirmContribute
     },
   ])
 }
-const mockData = {
-  title: 'Build-A-ReadMe',
-  description: 'Build a readme.md using the command line',
-  installation: 'use npm install to install all dependants',
-  usage: "In your terminal navigate to the project root folder and run node index.js and you'll be given prompts in the command line to fill in your README.md",
-  license: 'MIT',
-  confirmFeatures: true,
-  features: 'submit a pull request and the Build-A-Read me team will review the submission',        
-  confirmContribute: true
-};
 
 // TODO: Create a function to initialize app
 promptUser()

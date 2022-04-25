@@ -32,11 +32,13 @@ function renderLicenseSection(license) {
   
 }
 
-function renderTableOfContents(confirmFeatures, confirmContribute){
+function renderTableOfContents(confirmArr){
+  const { confirmFeatures, features, confirmContribute, contribute} = confirmArr;
   if(confirmFeatures && confirmContribute){
     return `## Table Of Content
 - [Project description](#Description)
 - [Usage](#Usage)
+- [Testing](#Testing)
 - [Installation](#Installation)
 - [Features](#Features)
 - [Contribute](#Contribute)
@@ -45,6 +47,7 @@ function renderTableOfContents(confirmFeatures, confirmContribute){
     return `## Table Of Content
 - [Project description](#Description)
 - [Usage](#Usage)
+- [Testing](#Testing)
 - [Installation](#Installation)
 - [Features](#Features)
 - [License](#License)`
@@ -52,6 +55,7 @@ function renderTableOfContents(confirmFeatures, confirmContribute){
     return `## Table Of Content
 - [Project description](#Description)
 - [Usage](#Usage)
+- [Testing](#Testing)
 - [Installation](#Installation)
 - [Contribute](#Contribute)
 - [License](#License)`
@@ -59,6 +63,7 @@ function renderTableOfContents(confirmFeatures, confirmContribute){
     return `## Table Of Content
 - [Project description](#Description)
 - [Usage](#Usage)
+- [Testing](#Testing)
 - [Installation](#Installation)
 - [License](#License)`
   }
@@ -68,29 +73,26 @@ function renderFeaturesSection(confirmArr){
   const { confirmFeatures, features} = confirmArr;
   if(confirmFeatures){
     return `## Features
-${features}
-`
+${features}`
   }
   return``
 }
 
 function renderContributeSection(confirmArr){
-  const { confirmContribute, contribute } = confirmArr;
+  const { confirmFeatures, features, confirmContribute, contribute } = confirmArr;
   if(confirmContribute){
-    console.log(contribute)
     return `## contribute
-${contribute}
-`
+${contribute}`
   }
   return``
 }
 
 module.exports = templateData => {
-  const { title, description, installation, usage, license, ...confirmArr } = templateData;
+  const { title, description, usage, testing, installation, questions, license, ...confirmArr } = templateData;
   return `# ${title}
 ${renderLicenseBadge(license)}
 
-${renderTableOfContents(confirmFeatures, confirmContribute)}
+${renderTableOfContents(confirmArr)}
 
 ## Description 
 ${description}
@@ -98,12 +100,18 @@ ${description}
 ## Usage
 ${usage}
 
+## Testing
+${testing}
+
 ## Installation
 ${installation}
 
-${renderFeaturesSection(confirmArr)}
+${renderFeaturesSection(confirmArr)} 
 
 ${renderContributeSection(confirmArr)}
+
+## Questions
+${questions}
 
 ## license
 ${renderLicenseSection(license)}
