@@ -1,5 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// returns the licenses argued from the badgeObject. If no license then an empty string is returned
 function renderLicenseBadge(license) {
   const badgeObject = {
     MIT: '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
@@ -10,8 +9,7 @@ function renderLicenseBadge(license) {
   return license ? badgeObject[license]: '';
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// returns a link from the licenseLinkObject to the the corresponding license argument
 function renderLicenseLink(license) {
   const licenseLinkObject = {
     MIT: '[MIT](https://opensource.org/licenses/MIT)',
@@ -21,17 +19,17 @@ function renderLicenseLink(license) {
   return licenseLinkObject[license];
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// If there is a license choosen then the 'licensed under' statement is returned
 function renderLicenseSection(license) {
   if(license !== 'No license'){
     return `This project is licensed under the ${renderLicenseLink(license)} license`
   }else{
     return 'No license used for this project'
   }
-  
 }
 
+// checks if the optional sections of the readme were desired and returns a table of contents template
+// that includes the optional sections desired
 function renderTableOfContents(confirmArr){
   const { confirmFeatures, features, confirmContribute, contribute} = confirmArr;
   if(confirmFeatures && confirmContribute){
@@ -73,6 +71,7 @@ function renderTableOfContents(confirmArr){
   }
 }
 
+// checks if the optional features section is desired. If true returns the features section template
 function renderFeaturesSection(confirmArr){
   const { confirmFeatures, features} = confirmArr;
   if(confirmFeatures){
@@ -82,6 +81,7 @@ ${features}`
   return``
 }
 
+// checks if the optional contribute section is desired. If true returns the contribute section template
 function renderContributeSection(confirmArr){
   const { confirmFeatures, features, confirmContribute, contribute } = confirmArr;
   if(confirmContribute){
@@ -91,6 +91,7 @@ ${contribute}`
   return``
 }
 
+// This module exports a readme template dynamically filled out using the inquirer object returned from promptUser()
 module.exports = templateData => {
   const { title, description, usage, testing, installation, github, email, questionInstructions, license, ...confirmArr } = templateData;
   return `# ${title}
