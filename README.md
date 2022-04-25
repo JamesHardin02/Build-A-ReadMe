@@ -10,6 +10,7 @@
 - [Contribute](#contribute)
 - [Questions](#questions)
 - [License](#license)
+- [Screenshots](#screenshots)
 
 ## Description 
 Generate a README from the command line using Node.js
