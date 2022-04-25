@@ -1,5 +1,5 @@
-# t
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# Build-A-ReadMe
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
 ## Table Of Content
 - [Project description](#description)
@@ -12,27 +12,27 @@
 - [License](#license)
 
 ## Description 
-d
+Generate a README.md from the command line using Node.js
 
 ## Usage
-i
+Open in a source-code editor, install dependencies, and run node index.js in your terminal, then answer prompts in the terminal to generate the readme file
 
 ## Testing
-t
+testing information here
 
 ## Installation
-i
+run this command in the terminal: npm install
 
 ## Features
-sd 
+Utilizes inquirer for terminal prompts 
 
 ## Contribute
-sd
+Submit a pull request for review and contact me about your contribution
 
 ## Questions
-t
-- GitHub Username: [j](https://github.com/j)
-- Email Address: d
+Please contact me at either my GitHub or email and I will respond to any questions as soon as possible. Thank You!
+- GitHub Username: [JamesHardin02](https://github.com/JamesHardin02)
+- Email Address: jwhusc7@gmail.com
 
 ## license
-This project is licensed under the [MIT](https://opensource.org/licenses/MIT) license
+This project is licensed under the [ISC](https://opensource.org/licenses/ISC) license
