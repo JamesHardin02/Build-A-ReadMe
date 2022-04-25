@@ -36,3 +36,9 @@ Please contact me at either my GitHub or email and I will respond to any questio
 
 ## license
 This project is licensed under the [ISC](https://opensource.org/licenses/ISC) license
+
+## Screenshots
+Some terminal prompts from the app compared to the markdown generated using Build-A-ReadMe 
+![Prompts vs. Markdown](/assets/images/markdown-terminal-example.png)
+The final product compared to the terminal prompts
+![Prompts vs. Preview](/assets/images/preview-terminal-example.png)
