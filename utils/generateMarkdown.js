@@ -36,7 +36,7 @@ function renderTableOfContents(confirmArr){
   const { confirmFeatures, features, confirmContribute, contribute} = confirmArr;
   if(confirmFeatures && confirmContribute){
     return `## Table Of Content
-- [Project description](#description)
+- [Description](#description)
 - [Usage](#usage)
 - [Testing](#testing)
 - [Installation](#installation)
@@ -46,7 +46,7 @@ function renderTableOfContents(confirmArr){
 - [License](#license)`
   } else if(confirmFeatures && !confirmContribute){
     return `## Table Of Content
-- [Project description](#description)
+- [Description](#description)
 - [Usage](#usage)
 - [Testing](#testing)
 - [Installation](#installation)
@@ -55,7 +55,7 @@ function renderTableOfContents(confirmArr){
 - [License](#license)`
   } else if (!confirmFeatures && confirmContribute){
     return `## Table Of Content
-- [Project description](#description)
+- [Description](#description)
 - [Usage](#usage)
 - [Testing](#testing)
 - [Installation](#installation)
@@ -64,7 +64,7 @@ function renderTableOfContents(confirmArr){
 - [License](#license)`
   } else {
     return `## Table Of Content
-- [Project description](#description)
+- [Description](#description)
 - [Usage](#usage)
 - [Testing](#testing)
 - [Installation](#installation)
