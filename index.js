@@ -1,8 +1,9 @@
-// TODO: Include packages needed for this application
+// Package variables
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 const { writeToFile } = require('./utils/fsModule');
-// TODO: Create an array of questions for user input
+// Prompt users uses the inquirer module to prompt users from the command line questions. 
+// User responses are returned as a object to the next .then in the promise chain
 const promptUser = () => {
   return inquirer.prompt([
     {
@@ -147,7 +148,10 @@ const promptUser = () => {
   ])
 }
 
-// TODO: Create a function to initialize app
+// promise chain
+// promptUsers() returns a inquirer object with all user responses to generateMarkdown() module
+// then the markdown content is returned to writeToFile module which writes the content to a readme file
+// and returns a success or err promise
 promptUser()
   .then(answers => {
     return generateMarkdown(answers);

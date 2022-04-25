@@ -1,5 +1,7 @@
+// file system module imported
 const fs = require('fs');
 
+// returns a promise that handles the success or failure of the asynchronous function writeFile()
 const writeToFile = fileContent => {
   return new Promise((resolve, reject) => {
     fs.writeFile('README.md', fileContent, err => {
