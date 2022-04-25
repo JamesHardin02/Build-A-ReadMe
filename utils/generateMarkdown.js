@@ -36,40 +36,40 @@ function renderTableOfContents(confirmArr){
   const { confirmFeatures, features, confirmContribute, contribute} = confirmArr;
   if(confirmFeatures && confirmContribute){
     return `## Table Of Content
-- [Project description](#Description)
-- [Usage](#Usage)
-- [Testing](#Testing)
-- [Installation](#Installation)
-- [Features](#Features)
-- [Contribute](#Contribute)
-- [Questions](#Questions)
-- [License](#License)`
+- [Project description](#description)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Installation](#installation)
+- [Features](#features)
+- [Contribute](#contribute)
+- [Questions](#questions)
+- [License](#license)`
   } else if(confirmFeatures && !confirmContribute){
     return `## Table Of Content
-- [Project description](#Description)
-- [Usage](#Usage)
-- [Testing](#Testing)
-- [Installation](#Installation)
-- [Features](#Features)
-- [Questions](#Questions)
-- [License](#License)`
+- [Project description](#description)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Installation](#installation)
+- [Features](#features)
+- [Questions](#questions)
+- [License](#license)`
   } else if (!confirmFeatures && confirmContribute){
     return `## Table Of Content
-- [Project description](#Description)
-- [Usage](#Usage)
-- [Testing](#Testing)
-- [Installation](#Installation)
-- [Contribute](#Contribute)
-- [Questions](#Questions)
-- [License](#License)`
+- [Project description](#description)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Installation](#installation)
+- [Contribute](#contribute)
+- [Questions](#questions)
+- [License](#license)`
   } else {
     return `## Table Of Content
-- [Project description](#Description)
-- [Usage](#Usage)
-- [Testing](#Testing)
-- [Installation](#Installation)
-- [Questions](#Questions)
-- [License](#License)`
+- [Project description](#description)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Installation](#installation)
+- [Questions](#questions)
+- [License](#license)`
   }
 }
 
@@ -85,7 +85,7 @@ ${features}`
 function renderContributeSection(confirmArr){
   const { confirmFeatures, features, confirmContribute, contribute } = confirmArr;
   if(confirmContribute){
-    return `## contribute
+    return `## Contribute
 ${contribute}`
   }
   return``
