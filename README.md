@@ -43,3 +43,6 @@ Some terminal prompts from the app compared to the markdown generated using Buil
 ![Prompts vs. Markdown](/assets/images/markdown-terminal-example.png)
 The final product compared to the terminal prompts
 ![Prompts vs. Preview](/assets/images/preview-terminal-example.png)
+
+## Walkthrough
+https://user-images.githubusercontent.com/98061516/166325504-9f603bd2-14a9-49f3-b45c-cc526e2cc587.mp4
